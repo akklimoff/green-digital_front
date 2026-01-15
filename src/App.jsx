@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
-import Hero from './components/Hero'
-import About from './components/About'
-import Mission from './components/Mission'
-import Structure from './components/Structure'
-import Projects from './components/Projects'
-import News from './components/News'
-import Events from './components/Events'
-import Resources from './components/Resources'
-import Partners from './components/Partners'
-import Contact from './components/Contact'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
+import ScrollToTopOnNavigate from './components/ScrollToTopOnNavigate'
 import Loading from './components/Loading'
+import HomePage from './pages/HomePage'
+import AboutPage from './pages/AboutPage'
+import MissionPage from './pages/MissionPage'
+import StructurePage from './pages/StructurePage'
+import ProjectsPage from './pages/ProjectsPage'
+import NewsPage from './pages/NewsPage'
+import EventsPage from './pages/EventsPage'
+import ResourcesPage from './pages/ResourcesPage'
+import PartnersPage from './pages/PartnersPage'
+import ContactPage from './pages/ContactPage'
 
 function App() {
   const [scrolled, setScrolled] = useState(false)
@@ -39,23 +41,28 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen">
-      <Header scrolled={scrolled} />
-      <main>
-        <Hero />
-        <About />
-        <Mission />
-        <Structure />
-        <Projects />
-        <News />
-        <Events />
-        <Resources />
-        <Partners />
-        <Contact />
-      </main>
-      <Footer />
-      <ScrollToTop />
-    </div>
+    <Router>
+      <ScrollToTopOnNavigate />
+      <div className="min-h-screen">
+        <Header scrolled={scrolled} />
+        <main>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/mission" element={<MissionPage />} />
+            <Route path="/structure" element={<StructurePage />} />
+            <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/news" element={<NewsPage />} />
+            <Route path="/events" element={<EventsPage />} />
+            <Route path="/resources" element={<ResourcesPage />} />
+            <Route path="/partners" element={<PartnersPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+          </Routes>
+        </main>
+        <Footer />
+        <ScrollToTop />
+      </div>
+    </Router>
   )
 }
 

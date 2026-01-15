@@ -1,21 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { FaLeaf, FaLaptopCode, FaGlobeAmericas, FaArrowDown } from 'react-icons/fa'
 
 const Hero = () => {
-  const scrollToNext = () => {
-    const element = document.getElementById('about')
-    if (element) {
-      const offset = 80
-      const elementPosition = element.getBoundingClientRect().top
-      const offsetPosition = elementPosition + window.pageYOffset - offset
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      })
-    }
-  }
-
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary-600 via-primary-700 to-primary-900">
       {/* Animated Background */}
@@ -67,28 +54,28 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-scale-in delay-500">
-            <button
-              onClick={() => document.getElementById('about').scrollIntoView({ behavior: 'smooth' })}
+            <Link
+              to="/about"
               className="px-8 py-4 bg-white text-primary-700 font-semibold rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transform transition-all duration-300"
             >
               Узнать больше
-            </button>
-            <button
-              onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
+            </Link>
+            <Link
+              to="/contact"
               className="px-8 py-4 bg-green-500 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transform transition-all duration-300"
             >
               Связаться с нами
-            </button>
+            </Link>
           </div>
         </div>
 
         {/* Scroll Down Indicator */}
-        <button
-          onClick={scrollToNext}
+        <Link
+          to="/about"
           className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white animate-bounce cursor-pointer hover:text-green-300 transition-colors"
         >
           <FaArrowDown size={32} />
-        </button>
+        </Link>
       </div>
     </section>
   )

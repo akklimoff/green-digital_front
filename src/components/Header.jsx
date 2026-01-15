@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import { FaBars, FaTimes, FaLeaf, FaLaptop } from 'react-icons/fa'
 
 const Header = ({ scrolled }) => {
@@ -23,29 +24,18 @@ const Header = ({ scrolled }) => {
   }, [isMenuOpen])
 
   const menuItems = [
-    { id: 'hero', label: 'Главная' },
-    { id: 'about', label: 'О проекте' },
-    { id: 'mission', label: 'Миссия' },
-    { id: 'structure', label: 'Структура' },
-    { id: 'projects', label: 'Проекты' },
-    { id: 'news', label: 'Новости' },
-    { id: 'events', label: 'Мероприятия' },
-    { id: 'partners', label: 'Партнёры' },
-    { id: 'contact', label: 'Контакты' },
+    { path: '/', label: 'Главная' },
+    { path: '/about', label: 'О проекте' },
+    { path: '/mission', label: 'Миссия' },
+    { path: '/structure', label: 'Структура' },
+    { path: '/projects', label: 'Проекты' },
+    { path: '/news', label: 'Новости' },
+    { path: '/events', label: 'Мероприятия' },
+    { path: '/partners', label: 'Партнёры' },
+    { path: '/contact', label: 'Контакты' },
   ]
 
-  const scrollToSection = (id) => {
-    const element = document.getElementById(id)
-    if (element) {
-      const offset = 80
-      const elementPosition = element.getBoundingClientRect().top
-      const offsetPosition = elementPosition + window.pageYOffset - offset
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      })
-    }
+  const handleMenuClose = () => {
     setIsMenuOpen(false)
   }
 
@@ -59,7 +49,7 @@ const Header = ({ scrolled }) => {
       <div className="container-custom">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-3 cursor-pointer" onClick={() => scrollToSection('hero')}>
+          <Link to="/" className="flex items-center space-x-3 cursor-pointer">
             <div className="flex items-center">
               <FaLeaf className="text-green-500 text-2xl" />
               <FaLaptop className="text-primary-500 text-2xl -ml-2" />
@@ -70,18 +60,18 @@ const Header = ({ scrolled }) => {
               </h1>
               <p className="text-xs text-gray-600">КГТУ им. И. Раззакова</p>
             </div>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-1">
             {menuItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
+              <Link
+                key={item.path}
+                to={item.path}
                 className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200"
               >
                 {item.label}
-              </button>
+              </Link>
             ))}
           </nav>
 
@@ -102,16 +92,17 @@ const Header = ({ scrolled }) => {
         >
           <nav className="flex flex-col space-y-2 pb-4">
             {menuItems.map((item, index) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
+              <Link
+                key={item.path}
+                to={item.path}
+                onClick={handleMenuClose}
                 className="px-4 py-3 text-left text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200 transform hover:translate-x-2"
                 style={{
                   transitionDelay: isMenuOpen ? `${index * 30}ms` : '0ms'
                 }}
               >
                 {item.label}
-              </button>
+              </Link>
             ))}
           </nav>
         </div>
