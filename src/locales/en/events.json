@@ -1,0 +1,26 @@
+{
+  "title": "Events and Services",
+  "description": "The Green and Digital Office regularly organizes and supports various educational and scientific events",
+  "eventTypes": [
+    {
+      "title": "Training Seminars and Workshops",
+      "description": "Practical sessions on environmental management and digital technologies"
+    },
+    {
+      "title": "Lectures by International Experts",
+      "description": "Meetings with leading specialists in the field of sustainable development"
+    },
+    {
+      "title": "Round Tables and Discussions",
+      "description": "Discussion of current issues in ecology and digitalization of education"
+    },
+    {
+      "title": "Student Initiatives",
+      "description": "Support for student projects and ideas on sustainable development"
+    }
+  ],
+  "calendar": {
+    "title": "Event Calendar",
+    "description": "The event calendar is updated on an ongoing basis. Follow current information about upcoming seminars, workshops, and meetings."
+  }
+}

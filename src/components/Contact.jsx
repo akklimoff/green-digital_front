@@ -1,31 +1,36 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
+import { useParams } from 'react-router-dom'
 import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaBuilding, FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa'
 
 const Contact = () => {
+  const { t } = useTranslation('contact')
+  const { lang } = useParams()
+
   const contactInfo = [
     {
       icon: FaBuilding,
-      title: 'Расположение',
-      content: 'Главный корпус КГТУ, кабинет 1/234',
+      title: t('contactInfo.location.title'),
+      content: t('contactInfo.location.content'),
       color: 'primary'
     },
     {
       icon: FaMapMarkerAlt,
-      title: 'Адрес',
-      content: 'г. Бишкек, пр-т Ч. Айтматова, 66',
+      title: t('contactInfo.address.title'),
+      content: t('contactInfo.address.content'),
       color: 'green'
     },
     {
       icon: FaEnvelope,
-      title: 'Email',
-      content: 'burul.japakova@kstu.kg',
+      title: t('contactInfo.email.title'),
+      content: t('contactInfo.email.content'),
       link: 'mailto:burul.japakova@kstu.kg',
       color: 'blue'
     },
     {
       icon: FaPhone,
-      title: 'Телефон',
-      content: '+996 703 323 710',
+      title: t('contactInfo.phone.title'),
+      content: t('contactInfo.phone.content'),
       link: 'tel:+996703323710',
       color: 'purple'
     }
@@ -53,9 +58,9 @@ const Contact = () => {
         <div className="max-w-6xl mx-auto">
           {/* Section Title */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary-700 mb-4">Контакты</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-primary-700 mb-4">{t('title')}</h2>
             <div className="w-24 h-1 bg-green-500 mx-auto mb-6"></div>
-            <p className="text-lg text-gray-600">Свяжитесь с нами для получения дополнительной информации</p>
+            <p className="text-lg text-gray-600">{t('description')}</p>
           </div>
 
           {/* Contact Cards */}
@@ -88,32 +93,32 @@ const Contact = () => {
           {/* Main Contact Box */}
           <div className="bg-gradient-to-br from-primary-600 to-primary-800 rounded-2xl p-8 md:p-12 text-white mb-8">
             <div className="text-center mb-8">
-              <h3 className="text-3xl font-bold mb-4">Green and Digital Office</h3>
+              <h3 className="text-3xl font-bold mb-4">{t('mainBox.title')}</h3>
               <p className="text-xl text-primary-100">
-                Кыргызский государственный технический университет им. И. Раззакова
+                {t('mainBox.subtitle')}
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
                 <FaMapMarkerAlt className="text-3xl mb-3" />
-                <p className="text-lg">г. Бишкек, пр-т Ч. Айтматова, 66</p>
-                <p className="text-primary-200">Главный корпус, кабинет 1/234</p>
+                <p className="text-lg">{t('mainBox.address')}</p>
+                <p className="text-primary-200">{t('mainBox.building')}</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
                 <div className="flex items-center mb-3">
                   <FaEnvelope className="text-2xl mr-3" />
                   <FaPhone className="text-2xl" />
                 </div>
-                <p className="text-lg mb-1">burul.japakova@kstu.kg</p>
-                <p className="text-primary-200">+996 703 323 710</p>
+                <p className="text-lg mb-1">{t('contactInfo.email.content')}</p>
+                <p className="text-primary-200">{t('contactInfo.phone.content')}</p>
               </div>
             </div>
           </div>
 
           {/* Social Media */}
           <div className="text-center">
-            <h3 className="text-2xl font-bold text-gray-800 mb-6">Следите за нашей деятельностью</h3>
+            <h3 className="text-2xl font-bold text-gray-800 mb-6">{t('social.title')}</h3>
             <div className="flex justify-center space-x-4">
               {socialLinks.map((social, index) => {
                 const Icon = social.icon
@@ -128,7 +133,7 @@ const Contact = () => {
                 )
               })}
             </div>
-            <p className="text-gray-600 mt-6">Присоединяйтесь к инициативам Green and Digital Office</p>
+            <p className="text-gray-600 mt-6">{t('social.description')}</p>
           </div>
         </div>
       </div>

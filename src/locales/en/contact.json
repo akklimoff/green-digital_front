@@ -1,0 +1,32 @@
+{
+  "title": "Contact",
+  "description": "Contact us for additional information",
+  "contactInfo": {
+    "location": {
+      "title": "Location",
+      "content": "KSTU Main Building, room 1/234"
+    },
+    "address": {
+      "title": "Address",
+      "content": "Bishkek, Ch. Aitmatov Ave., 66"
+    },
+    "email": {
+      "title": "Email",
+      "content": "burul.japakova@kstu.kg"
+    },
+    "phone": {
+      "title": "Phone",
+      "content": "+996 703 323 710"
+    }
+  },
+  "mainBox": {
+    "title": "Green and Digital Office",
+    "subtitle": "Kyrgyz State Technical University named after I. Razzakov",
+    "address": "Bishkek, Ch. Aitmatov Ave., 66",
+    "building": "Main building, room 1/234"
+  },
+  "social": {
+    "title": "Follow our activities",
+    "description": "Join the Green and Digital Office initiatives"
+  }
+}

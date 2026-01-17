@@ -1,30 +1,37 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
+import { useParams } from 'react-router-dom'
 import { FaBook, FaFileAlt, FaTools, FaVideo } from 'react-icons/fa'
 
 const Resources = () => {
+  const { t } = useTranslation('resources')
+  const { lang } = useParams()
+
+  const resourcesData = t('resources', { returnObjects: true })
+
   const resources = [
     {
       icon: FaFileAlt,
-      title: 'Методические материалы',
-      description: 'Руководства и методички по устойчивому развитию и экологическому менеджменту',
+      title: resourcesData[0].title,
+      description: resourcesData[0].description,
       color: 'primary'
     },
     {
       icon: FaBook,
-      title: 'Рекомендации по экологии',
-      description: 'Практические советы по внедрению экологических практик в университете',
+      title: resourcesData[1].title,
+      description: resourcesData[1].description,
       color: 'green'
     },
     {
       icon: FaTools,
-      title: 'Цифровые инструменты',
-      description: 'Руководства по использованию цифровых технологий в образовании',
+      title: resourcesData[2].title,
+      description: resourcesData[2].description,
       color: 'blue'
     },
     {
       icon: FaVideo,
-      title: 'Видеоматериалы',
-      description: 'Записи лекций, презентации и видео с мероприятий офиса',
+      title: resourcesData[3].title,
+      description: resourcesData[3].description,
       color: 'red'
     }
   ]
@@ -47,11 +54,11 @@ const Resources = () => {
           <div className="text-center mb-16">
             <div className="flex items-center justify-center mb-4">
               <FaBook className="text-5xl text-primary-600 mr-4" />
-              <h2 className="text-4xl md:text-5xl font-bold text-primary-700">Образовательные ресурсы</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-primary-700">{t('title')}</h2>
             </div>
             <div className="w-24 h-1 bg-green-500 mx-auto mb-6"></div>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Материалы предназначены для студентов, преподавателей и сотрудников университета
+              {t('description')}
             </p>
           </div>
 
@@ -85,11 +92,9 @@ const Resources = () => {
                 </div>
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-primary-700 mb-4">Доступ к материалам</h3>
+                <h3 className="text-2xl font-bold text-primary-700 mb-4">{t('infoBox.title')}</h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  В разделе представлены методические материалы по устойчивому развитию, рекомендации по экологическому
-                  менеджменту, цифровые инструменты и руководства, а также презентации и видеоматериалы мероприятий.
-                  Все материалы доступны для студентов, преподавателей и сотрудников университета.
+                  {t('infoBox.description')}
                 </p>
               </div>
             </div>

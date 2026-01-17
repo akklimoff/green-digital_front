@@ -1,0 +1,32 @@
+{
+  "title": "Контакты",
+  "description": "Свяжитесь с нами для получения дополнительной информации",
+  "contactInfo": {
+    "location": {
+      "title": "Расположение",
+      "content": "Главный корпус КГТУ, кабинет 1/234"
+    },
+    "address": {
+      "title": "Адрес",
+      "content": "г. Бишкек, пр-т Ч. Айтматова, 66"
+    },
+    "email": {
+      "title": "Email",
+      "content": "burul.japakova@kstu.kg"
+    },
+    "phone": {
+      "title": "Телефон",
+      "content": "+996 703 323 710"
+    }
+  },
+  "mainBox": {
+    "title": "Green and Digital Office",
+    "subtitle": "Кыргызский государственный технический университет им. И. Раззакова",
+    "address": "г. Бишкек, пр-т Ч. Айтматова, 66",
+    "building": "Главный корпус, кабинет 1/234"
+  },
+  "social": {
+    "title": "Следите за нашей деятельностью",
+    "description": "Присоединяйтесь к инициативам Green and Digital Office"
+  }
+}

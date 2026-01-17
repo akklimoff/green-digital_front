@@ -1,0 +1,26 @@
+{
+  "title": "Educational Resources",
+  "description": "Materials designed for students, faculty, and university staff",
+  "resources": [
+    {
+      "title": "Methodological Materials",
+      "description": "Guidelines and methodologies on sustainable development and environmental management"
+    },
+    {
+      "title": "Environmental Recommendations",
+      "description": "Practical advice on implementing environmental practices at the university"
+    },
+    {
+      "title": "Digital Tools",
+      "description": "Guides on using digital technologies in education"
+    },
+    {
+      "title": "Video Materials",
+      "description": "Recordings of lectures, presentations, and videos from office events"
+    }
+  ],
+  "infoBox": {
+    "title": "Access to Materials",
+    "description": "The section presents methodological materials on sustainable development, recommendations on environmental management, digital tools and guides, as well as presentations and video materials from events. All materials are available to students, faculty, and university staff."
+  }
+}

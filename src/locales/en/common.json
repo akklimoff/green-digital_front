@@ -1,0 +1,33 @@
+{
+  "header": {
+    "logo": {
+      "title": "Green & Digital Office",
+      "subtitle": "I. Razzakov KSTU"
+    },
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "mission": "Mission",
+      "structure": "Structure",
+      "projects": "Projects",
+      "news": "News",
+      "events": "Events",
+      "partners": "Partners",
+      "contact": "Contact"
+    }
+  },
+  "footer": {
+    "title": "Green & Digital Office",
+    "description": "University platform for promoting sustainable development and digital transformation principles at I. Razzakov KSTU.",
+    "quickLinks": "Quick Links",
+    "contactInfo": "Contact Information",
+    "address": {
+      "city": "Bishkek, Ch. Aitmatov Ave., 66",
+      "building": "KSTU Main Building, 1/234"
+    },
+    "madeWith": "Made with",
+    "forSustainable": "for a sustainable future",
+    "copyright": "Green and Digital Office, I. Razzakov KSTU",
+    "project": "Erasmus+ GREENKG Project"
+  }
+}

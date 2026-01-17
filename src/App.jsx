@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
 import ScrollToTopOnNavigate from './components/ScrollToTopOnNavigate'
 import Loading from './components/Loading'
+import LanguageRedirect from './components/LanguageRedirect'
+import LanguageLayout from './components/LanguageLayout'
 import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
 import MissionPage from './pages/MissionPage'
@@ -47,16 +49,25 @@ function App() {
         <Header scrolled={scrolled} />
         <main>
           <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/mission" element={<MissionPage />} />
-            <Route path="/structure" element={<StructurePage />} />
-            <Route path="/projects" element={<ProjectsPage />} />
-            <Route path="/news" element={<NewsPage />} />
-            <Route path="/events" element={<EventsPage />} />
-            <Route path="/resources" element={<ResourcesPage />} />
-            <Route path="/partners" element={<PartnersPage />} />
-            <Route path="/contact" element={<ContactPage />} />
+            {/* Root redirect */}
+            <Route path="/" element={<LanguageRedirect />} />
+
+            {/* Language-prefixed routes */}
+            <Route path="/:lang" element={<LanguageLayout />}>
+              <Route index element={<HomePage />} />
+              <Route path="about" element={<AboutPage />} />
+              <Route path="mission" element={<MissionPage />} />
+              <Route path="structure" element={<StructurePage />} />
+              <Route path="projects" element={<ProjectsPage />} />
+              <Route path="news" element={<NewsPage />} />
+              <Route path="events" element={<EventsPage />} />
+              <Route path="resources" element={<ResourcesPage />} />
+              <Route path="partners" element={<PartnersPage />} />
+              <Route path="contact" element={<ContactPage />} />
+            </Route>
+
+            {/* 404 fallback */}
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>
         <Footer />

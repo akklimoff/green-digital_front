@@ -1,18 +1,14 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
+import { useParams } from 'react-router-dom'
 import { FaHandshake, FaUniversity, FaGlobeEurope, FaUsers } from 'react-icons/fa'
 
 const Partners = () => {
-  const nationalPartners = [
-    'Высшие учебные заведения Кыргызской Республики',
-    'Государственные и общественные организации',
-    'Профильные министерства и ведомства'
-  ]
+  const { t } = useTranslation('partners')
+  const { lang } = useParams()
 
-  const internationalPartners = [
-    'Университеты Европейского союза',
-    'Организации — участники программы Erasmus+',
-    'Международные эксперты в области устойчивого развития'
-  ]
+  const nationalPartners = t('nationalPartners.list', { returnObjects: true })
+  const internationalPartners = t('internationalPartners.list', { returnObjects: true })
 
   return (
     <section id="partners" className="py-20 bg-white">
@@ -22,7 +18,7 @@ const Partners = () => {
           <div className="text-center mb-16">
             <div className="flex items-center justify-center mb-4">
               <FaHandshake className="text-5xl text-primary-600 mr-4" />
-              <h2 className="text-4xl md:text-5xl font-bold text-primary-700">Партнёры и сотрудничество</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-primary-700">{t('title')}</h2>
             </div>
             <div className="w-24 h-1 bg-green-500 mx-auto"></div>
           </div>
@@ -35,7 +31,7 @@ const Partners = () => {
                 <div className="p-4 bg-primary-600 rounded-xl mr-4">
                   <FaUniversity className="text-4xl text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-primary-700">Национальные партнёры</h3>
+                <h3 className="text-2xl font-bold text-primary-700">{t('nationalPartners.title')}</h3>
               </div>
               <ul className="space-y-4">
                 {nationalPartners.map((partner, index) => (
@@ -53,7 +49,7 @@ const Partners = () => {
                 <div className="p-4 bg-green-600 rounded-xl mr-4">
                   <FaGlobeEurope className="text-4xl text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-green-700">Международные партнёры</h3>
+                <h3 className="text-2xl font-bold text-green-700">{t('internationalPartners.title')}</h3>
               </div>
               <ul className="space-y-4">
                 {internationalPartners.map((partner, index) => (
@@ -69,11 +65,9 @@ const Partners = () => {
           {/* Cooperation Call */}
           <div className="mt-12 bg-gradient-to-br from-primary-600 to-primary-800 rounded-2xl p-8 md:p-12 text-white text-center">
             <FaUsers className="text-6xl mx-auto mb-6 animate-pulse" />
-            <h3 className="text-3xl font-bold mb-4">Открыты для сотрудничества</h3>
+            <h3 className="text-3xl font-bold mb-4">{t('cooperation.title')}</h3>
             <p className="text-lg text-primary-100 max-w-3xl mx-auto leading-relaxed">
-              Мы стремимся расширять партнёрские связи и приглашаем к сотрудничеству образовательные учреждения,
-              государственные организации, международные структуры и всех, кто разделяет цели устойчивого развития
-              и цифровой трансформации.
+              {t('cooperation.description')}
             </p>
           </div>
         </div>

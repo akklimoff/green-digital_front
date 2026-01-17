@@ -1,26 +1,15 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
+import { useParams } from 'react-router-dom'
 import { FaBullseye, FaCheckCircle, FaTasks } from 'react-icons/fa'
 import ScrollAnimation from './ScrollAnimation'
 
 const Mission = () => {
-  const goals = [
-    'Институционализация принципов устойчивого развития в системе управления, образовательных программах и научных исследованиях КГТУ',
-    'Формирование экологически ответственной и цифрово компетентной университетской среды для студентов, преподавателей и сотрудников',
-    'Развитие и внедрение модели «зелёного и цифрового университета» с учетом национальных приоритетов и международных стандартов устойчивого развития',
-    'Поддержка цифровой трансформации ключевых процессов университета, включая образование, науку и администрирование',
-    'Расширение международного сотрудничества и интеграция КГТУ в глобальное образовательное и научное пространство в области устойчивого развития',
-    'Повышение позиций университета в международных рейтингах и инициативах устойчивого развития'
-  ]
+  const { t } = useTranslation('mission')
+  const { lang } = useParams()
 
-  const tasks = [
-    'Координация мероприятий по устойчивому развитию в КГТУ',
-    'Участие в реализации проекта Erasmus+ GREENKG',
-    'Разработка и внедрение «зелёных» и цифровых инициатив',
-    'Организация обучающих семинаров, тренингов и лекций',
-    'Поддержка студенческих и преподавательских инициатив',
-    'Мониторинг и анализ показателей устойчивого развития',
-    'Распространение лучших международных практик'
-  ]
+  const goals = t('goals', { returnObjects: true })
+  const tasks = t('tasks', { returnObjects: true })
 
   return (
     <section id="mission" className="py-20 bg-gray-50">
@@ -31,15 +20,12 @@ const Mission = () => {
             <div className="mb-16">
               <div className="flex items-center justify-center mb-8">
                 <FaBullseye className="text-5xl text-primary-600 mr-4" />
-                <h2 className="text-4xl md:text-5xl font-bold text-primary-700">Миссия</h2>
+                <h2 className="text-4xl md:text-5xl font-bold text-primary-700">{t('missionTitle')}</h2>
               </div>
 
               <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 border-l-8 border-green-500">
                 <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-                  Обеспечить вклад Green and Digital Office в реализацию стратегии устойчивого развития Кыргызского
-                  государственного технического университета им. И. Раззакова путем интеграции экологических, цифровых и
-                  инновационных решений в образовательную, научную и управленческую деятельность университета, способствуя
-                  формированию устойчивой, ресурсосберегающей и цифрово ориентированной университетской среды.
+                  {t('missionText')}
                 </p>
               </div>
             </div>
@@ -50,7 +36,7 @@ const Mission = () => {
             <div className="mb-16">
               <div className="text-center mb-12">
                 <h3 className="text-3xl md:text-4xl font-bold text-primary-700 mb-4">
-                  Стратегические цели
+                  {t('goalsTitle')}
                 </h3>
                 <div className="w-24 h-1 bg-green-500 mx-auto"></div>
               </div>
@@ -80,7 +66,7 @@ const Mission = () => {
             <div>
               <div className="flex items-center justify-center mb-12">
                 <FaTasks className="text-4xl text-green-600 mr-4" />
-                <h3 className="text-3xl md:text-4xl font-bold text-primary-700">Задачи офиса</h3>
+                <h3 className="text-3xl md:text-4xl font-bold text-primary-700">{t('tasksTitle')}</h3>
               </div>
 
               <div className="bg-gradient-to-br from-green-50 to-primary-50 rounded-2xl p-8 md:p-12">

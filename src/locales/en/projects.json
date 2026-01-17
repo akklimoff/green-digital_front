@@ -1,0 +1,32 @@
+{
+  "title": "Projects and Initiatives",
+  "mainProject": {
+    "title": "Erasmus+ GREENKG",
+    "description": "Key international project aimed at sustainable development of universities",
+    "goals": [
+      "Development of university sustainable development strategy",
+      "Development of digital management tools",
+      "Implementation of ESG approaches",
+      "Establishment of Green and Digital Offices"
+    ]
+  },
+  "initiativesTitle": "University Initiatives",
+  "initiatives": [
+    {
+      "title": "Environmental Campaigns",
+      "description": "Organization of waste collection campaigns, greening, and environmental education"
+    },
+    {
+      "title": "Energy Efficiency",
+      "description": "Projects for energy conservation and implementation of renewable energy sources"
+    },
+    {
+      "title": "Process Digitalization",
+      "description": "Implementation of digital solutions in educational and management activities"
+    },
+    {
+      "title": "Green Competencies",
+      "description": "Development of environmental knowledge and skills among students and staff"
+    }
+  ]
+}

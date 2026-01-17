@@ -1,0 +1,31 @@
+{
+  "title": "About the Project",
+  "content": {
+    "paragraph1": "was established within the framework of the international Erasmus+ program project",
+    "officeName": "Green and Digital Office of I. Razzakov KSTU",
+    "projectName": "«Green and Digital Universities for Sustainable Development of Kyrgyzstan (GREENKG)»",
+    "paragraph2": "The project is implemented by a consortium of leading universities of the Kyrgyz Republic and higher educational institutions of the European Union countries, aimed at strengthening the institutional capacity of Kyrgyzstan's universities in the field of sustainable development, environmental management, and digital transformation."
+  },
+  "cards": {
+    "erasmus": {
+      "title": "Erasmus+",
+      "description": "International program supporting education and academic mobility"
+    },
+    "consortium": {
+      "title": "University Consortium",
+      "description": "Partnership of leading universities in Kyrgyzstan and the European Union"
+    }
+  },
+  "goal": {
+    "title": "Main Goal of GREENKG Project",
+    "description": "To develop a systemic approach to implementing the principles of «green» and digital university, integrating sustainable practices into educational, scientific, and management activities, and enhancing the role of universities in achieving sustainable development goals.",
+    "period": {
+      "title": "Implementation Period",
+      "years": "2023–2026"
+    },
+    "format": {
+      "title": "Format",
+      "description": "Establishment of Green and Digital Offices in partner universities"
+    }
+  }
+}

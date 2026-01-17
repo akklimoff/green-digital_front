@@ -1,16 +1,20 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
+import { useParams } from 'react-router-dom'
 import { FaLeaf, FaLaptop, FaFacebook, FaInstagram, FaYoutube, FaHeart } from 'react-icons/fa'
 
 const Footer = () => {
+  const { t } = useTranslation('common')
+  const { lang } = useParams()
   const currentYear = new Date().getFullYear()
 
   const quickLinks = [
-    { label: 'Главная', id: 'hero' },
-    { label: 'О проекте', id: 'about' },
-    { label: 'Миссия', id: 'mission' },
-    { label: 'Проекты', id: 'projects' },
-    { label: 'Новости', id: 'news' },
-    { label: 'Контакты', id: 'contact' }
+    { label: t('header.nav.home'), id: 'hero' },
+    { label: t('header.nav.about'), id: 'about' },
+    { label: t('header.nav.mission'), id: 'mission' },
+    { label: t('header.nav.projects'), id: 'projects' },
+    { label: t('header.nav.news'), id: 'news' },
+    { label: t('header.nav.contact'), id: 'contact' }
   ]
 
   const scrollToSection = (id) => {
@@ -37,16 +41,15 @@ const Footer = () => {
               <FaLeaf className="text-3xl text-green-400" />
               <FaLaptop className="text-3xl text-blue-400 -ml-2" />
             </div>
-            <h3 className="text-xl font-bold mb-3">Green & Digital Office</h3>
+            <h3 className="text-xl font-bold mb-3">{t('footer.title')}</h3>
             <p className="text-primary-200 leading-relaxed">
-              Университетская площадка для продвижения принципов устойчивого развития и цифровой трансформации
-              КГТУ им. И. Раззакова.
+              {t('footer.description')}
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-xl font-bold mb-4">Быстрые ссылки</h3>
+            <h3 className="text-xl font-bold mb-4">{t('footer.quickLinks')}</h3>
             <ul className="space-y-2">
               {quickLinks.map((link, index) => (
                 <li key={index}>
@@ -63,10 +66,10 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-xl font-bold mb-4">Контактная информация</h3>
+            <h3 className="text-xl font-bold mb-4">{t('footer.contactInfo')}</h3>
             <div className="space-y-3 text-primary-200">
-              <p>г. Бишкек, пр-т Ч. Айтматова, 66</p>
-              <p>Главный корпус КГТУ, 1/234</p>
+              <p>{t('footer.address.city')}</p>
+              <p>{t('footer.address.building')}</p>
               <p>
                 <a href="mailto:burul.japakova@kstu.kg" className="hover:text-white transition-colors">
                   burul.japakova@kstu.kg
@@ -100,10 +103,10 @@ const Footer = () => {
         {/* Copyright */}
         <div className="text-center text-primary-300">
           <p className="flex items-center justify-center mb-2">
-            Сделано с <FaHeart className="text-red-500 mx-2 animate-pulse" /> для устойчивого будущего
+            {t('footer.madeWith')} <FaHeart className="text-red-500 mx-2 animate-pulse" /> {t('footer.forSustainable')}
           </p>
-          <p>© {currentYear} Green and Digital Office, КГТУ им. И. Раззакова</p>
-          <p className="text-sm mt-2">Erasmus+ GREENKG Project</p>
+          <p>© {currentYear} {t('footer.copyright')}</p>
+          <p className="text-sm mt-2">{t('footer.project')}</p>
         </div>
       </div>
     </footer>

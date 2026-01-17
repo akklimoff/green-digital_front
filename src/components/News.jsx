@@ -1,25 +1,32 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
+import { useParams } from 'react-router-dom'
 import { FaNewspaper, FaTrophy, FaCalendarAlt, FaGraduationCap } from 'react-icons/fa'
 
 const News = () => {
+  const { t } = useTranslation('news')
+  const { lang } = useParams()
+
+  const newsItemsData = t('newsItems', { returnObjects: true })
+
   const newsItems = [
     {
       icon: FaCalendarAlt,
-      title: 'Мероприятия Green and Digital Office',
-      date: '2024',
-      description: 'Регулярные встречи, семинары и тренинги по вопросам устойчивого развития'
+      title: newsItemsData[0].title,
+      date: newsItemsData[0].date,
+      description: newsItemsData[0].description
     },
     {
       icon: FaGraduationCap,
-      title: 'Участие в международных проектах',
-      date: '2024',
-      description: 'КГТУ активно участвует в форумах и конференциях Erasmus+ GREENKG'
+      title: newsItemsData[1].title,
+      date: newsItemsData[1].date,
+      description: newsItemsData[1].description
     },
     {
       icon: FaTrophy,
-      title: 'Достижения студентов',
-      date: '2024',
-      description: 'Награды и признание студенческих инициатив в области устойчивого развития'
+      title: newsItemsData[2].title,
+      date: newsItemsData[2].date,
+      description: newsItemsData[2].description
     }
   ]
 
@@ -31,11 +38,11 @@ const News = () => {
           <div className="text-center mb-16">
             <div className="flex items-center justify-center mb-4">
               <FaNewspaper className="text-5xl text-primary-600 mr-4" />
-              <h2 className="text-4xl md:text-5xl font-bold text-primary-700">Новости</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-primary-700">{t('title')}</h2>
             </div>
             <div className="w-24 h-1 bg-green-500 mx-auto mb-6"></div>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Актуальная информация о мероприятиях, достижениях и участии КГТУ в международных проектах
+              {t('description')}
             </p>
           </div>
 
@@ -64,8 +71,7 @@ const News = () => {
           {/* Info Box */}
           <div className="mt-12 bg-gradient-to-br from-primary-50 to-green-50 rounded-2xl p-8 text-center">
             <p className="text-lg text-gray-700">
-              <span className="font-semibold">В разделе «Новости»</span> публикуется актуальная информация о мероприятиях,
-              тренингах, семинарах, конференциях и достижениях студентов и преподавателей в области устойчивого развития.
+              <span className="font-semibold">{t('infoBox.highlight')}</span> {t('infoBox.text')}
             </p>
           </div>
         </div>

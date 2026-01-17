@@ -1,0 +1,19 @@
+{
+  "title": "Green and Digital Office Structure",
+  "description": "The Green and Digital Office operates as an interdisciplinary structural subdivision of I. Razzakov Kyrgyz State Technical University",
+  "overview": {
+    "paragraph1": "The Office carries out its activities within the structure supervised by the Vice-Rector for Research.",
+    "paragraph2": "The Office interacts with structural subdivisions of the university, institutes, departments, and research centers of KSTU, providing coordination, methodological support, and assistance for initiatives in the field of sustainable development, environmental management, and digitalization."
+  },
+  "structure": [
+    "Office Director",
+    "Working Group on Environmental Initiatives",
+    "Working Group on Digital Solutions",
+    "Institute Representatives",
+    "Student Volunteers and Activists"
+  ],
+  "cooperation": {
+    "title": "Cooperation",
+    "description": "The Office operates in close cooperation with the university administration and international partners"
+  }
+}

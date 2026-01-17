@@ -1,8 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { FaLeaf, FaLaptopCode, FaGlobeAmericas, FaArrowDown } from 'react-icons/fa'
+import { useTranslation } from 'react-i18next'
 
 const Hero = () => {
+  const { t } = useTranslation('home')
+  const { lang } = useParams()
+
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary-600 via-primary-700 to-primary-900">
       {/* Animated Background */}
@@ -28,50 +32,48 @@ const Hero = () => {
 
           {/* Main Title */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 animate-slide-up leading-tight">
-            Green and Digital Office
+            {t('hero.title')}
           </h1>
 
           <p className="text-xl md:text-2xl text-primary-100 mb-4 animate-slide-up delay-100">
-            Кыргызский государственный технический университет
+            {t('hero.university')}
           </p>
 
           <p className="text-lg md:text-xl text-primary-100 mb-12 animate-slide-up delay-200">
-            им. И. Раззакова
+            {t('hero.universityShort')}
           </p>
 
           {/* Description */}
           <div className="max-w-4xl mx-auto mb-12 animate-slide-up delay-300">
             <p className="text-lg md:text-xl text-white/90 leading-relaxed mb-6">
-              Университетская площадка для продвижения принципов устойчивого развития,
-              экологической ответственности и цифровой трансформации в образовательной
-              и управленческой деятельности университета.
+              {t('hero.description')}
             </p>
             <p className="text-base md:text-lg text-primary-200">
-              Офис открыт в 2024 году в рамках международного проекта Erasmus+
-              <span className="font-semibold"> «Green and Digital Universities for Sustainable Development of Kyrgyzstan (GREENKG)»</span>
+              {t('hero.project')}{' '}
+              <span className="font-semibold">{t('hero.projectName')}</span>
             </p>
           </div>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-scale-in delay-500">
             <Link
-              to="/about"
+              to={`/${lang}/about`}
               className="px-8 py-4 bg-white text-primary-700 font-semibold rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transform transition-all duration-300"
             >
-              Узнать больше
+              {t('hero.buttons.learnMore')}
             </Link>
             <Link
-              to="/contact"
+              to={`/${lang}/contact`}
               className="px-8 py-4 bg-green-500 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl hover:scale-105 transform transition-all duration-300"
             >
-              Связаться с нами
+              {t('hero.buttons.contact')}
             </Link>
           </div>
         </div>
 
         {/* Scroll Down Indicator */}
         <Link
-          to="/about"
+          to={`/${lang}/about`}
           className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white animate-bounce cursor-pointer hover:text-green-300 transition-colors"
         >
           <FaArrowDown size={32} />

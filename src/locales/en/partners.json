@@ -1,0 +1,23 @@
+{
+  "title": "Partners and Cooperation",
+  "nationalPartners": {
+    "title": "National Partners",
+    "list": [
+      "Higher educational institutions of the Kyrgyz Republic",
+      "State and public organizations",
+      "Relevant ministries and departments"
+    ]
+  },
+  "internationalPartners": {
+    "title": "International Partners",
+    "list": [
+      "European Union universities",
+      "Organizations participating in the Erasmus+ program",
+      "International experts in sustainable development"
+    ]
+  },
+  "cooperation": {
+    "title": "Open for Cooperation",
+    "description": "We strive to expand partnerships and invite educational institutions, government organizations, international structures, and all those who share the goals of sustainable development and digital transformation to cooperate."
+  }
+}

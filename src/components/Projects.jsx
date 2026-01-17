@@ -1,42 +1,45 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
+import { useParams } from 'react-router-dom'
 import { FaGlobe, FaRecycle, FaBolt, FaLaptop, FaSeedling } from 'react-icons/fa'
 
 const Projects = () => {
+  const { t } = useTranslation('projects')
+  const { lang } = useParams()
+
+  const mainProjectData = t('mainProject', { returnObjects: true })
+  const initiativesData = t('initiatives', { returnObjects: true })
+
   const mainProject = {
     icon: FaGlobe,
-    title: 'Erasmus+ GREENKG',
-    description: 'Ключевой международный проект, направленный на устойчивое развитие университетов',
-    goals: [
-      'Формирование стратегии устойчивого развития университетов',
-      'Развитие цифровых инструментов управления',
-      'Внедрение ESG-подходов',
-      'Создание Green and Digital Offices'
-    ]
+    title: mainProjectData.title,
+    description: mainProjectData.description,
+    goals: mainProjectData.goals
   }
 
   const initiatives = [
     {
       icon: FaRecycle,
-      title: 'Экологические акции',
-      description: 'Организация кампаний по сбору отходов, озеленению и экологическому просвещению',
+      title: initiativesData[0].title,
+      description: initiativesData[0].description,
       color: 'green'
     },
     {
       icon: FaBolt,
-      title: 'Энергоэффективность',
-      description: 'Проекты по энергосбережению и внедрению возобновляемых источников энергии',
+      title: initiativesData[1].title,
+      description: initiativesData[1].description,
       color: 'yellow'
     },
     {
       icon: FaLaptop,
-      title: 'Цифровизация процессов',
-      description: 'Внедрение цифровых решений в образовательную и управленческую деятельность',
+      title: initiativesData[2].title,
+      description: initiativesData[2].description,
       color: 'blue'
     },
     {
       icon: FaSeedling,
-      title: 'Зелёные компетенции',
-      description: 'Развитие экологических знаний и навыков у студентов и сотрудников',
+      title: initiativesData[3].title,
+      description: initiativesData[3].description,
       color: 'emerald'
     }
   ]
@@ -58,7 +61,7 @@ const Projects = () => {
           {/* Section Title */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-primary-700 mb-4">
-              Проекты и инициативы
+              {t('title')}
             </h2>
             <div className="w-24 h-1 bg-green-500 mx-auto"></div>
           </div>
@@ -92,7 +95,7 @@ const Projects = () => {
           {/* University Initiatives */}
           <div>
             <h3 className="text-3xl font-bold text-primary-700 mb-8 text-center">
-              Университетские инициативы
+              {t('initiativesTitle')}
             </h3>
 
             <div className="grid md:grid-cols-2 gap-6">

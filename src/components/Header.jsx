@@ -1,10 +1,18 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { FaBars, FaTimes, FaLeaf, FaLaptop } from 'react-icons/fa'
+import { useTranslation } from 'react-i18next'
+import LanguageSwitcher from './LanguageSwitcher'
 
 const Header = ({ scrolled }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const menuRef = useRef(null)
+  const { t, i18n } = useTranslation('common')
+  const location = useLocation()
+
+  // Extract language from URL path
+  const pathParts = location.pathname.split('/').filter(part => part !== '')
+  const lang = pathParts[0] && ['ru', 'en', 'kg'].includes(pathParts[0]) ? pathParts[0] : 'ru'
 
   // Закрытие меню при клике вне его
   useEffect(() => {
@@ -24,15 +32,15 @@ const Header = ({ scrolled }) => {
   }, [isMenuOpen])
 
   const menuItems = [
-    { path: '/', label: 'Главная' },
-    { path: '/about', label: 'О проекте' },
-    { path: '/mission', label: 'Миссия' },
-    { path: '/structure', label: 'Структура' },
-    { path: '/projects', label: 'Проекты' },
-    { path: '/news', label: 'Новости' },
-    { path: '/events', label: 'Мероприятия' },
-    { path: '/partners', label: 'Партнёры' },
-    { path: '/contact', label: 'Контакты' },
+    { path: '', label: t('header.nav.home') },
+    { path: 'about', label: t('header.nav.about') },
+    { path: 'mission', label: t('header.nav.mission') },
+    { path: 'structure', label: t('header.nav.structure') },
+    { path: 'projects', label: t('header.nav.projects') },
+    { path: 'news', label: t('header.nav.news') },
+    { path: 'events', label: t('header.nav.events') },
+    { path: 'partners', label: t('header.nav.partners') },
+    { path: 'contact', label: t('header.nav.contact') },
   ]
 
   const handleMenuClose = () => {
@@ -49,16 +57,16 @@ const Header = ({ scrolled }) => {
       <div className="container-custom">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 cursor-pointer">
+          <Link to={`/${lang || 'ru'}`} className="flex items-center space-x-3 cursor-pointer">
             <div className="flex items-center">
               <FaLeaf className="text-green-500 text-2xl" />
               <FaLaptop className="text-primary-500 text-2xl -ml-2" />
             </div>
             <div>
               <h1 className="text-xl font-bold text-primary-700 leading-tight">
-                Green & Digital Office
+                {t('header.logo.title')}
               </h1>
-              <p className="text-xs text-gray-600">КГТУ им. И. Раззакова</p>
+              <p className="text-xs text-gray-600">{t('header.logo.subtitle')}</p>
             </div>
           </Link>
 
@@ -67,12 +75,17 @@ const Header = ({ scrolled }) => {
             {menuItems.map((item) => (
               <Link
                 key={item.path}
-                to={item.path}
+                to={`/${lang}${item.path ? '/' + item.path : ''}`}
                 className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200"
               >
                 {item.label}
               </Link>
             ))}
+
+            {/* Language Switcher for Desktop */}
+            <div className="ml-4">
+              <LanguageSwitcher />
+            </div>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -87,14 +100,14 @@ const Header = ({ scrolled }) => {
         {/* Mobile Menu */}
         <div
           className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-            isMenuOpen ? 'max-h-96 opacity-100 mt-4' : 'max-h-0 opacity-0'
+            isMenuOpen ? 'max-h-[600px] opacity-100 mt-4' : 'max-h-0 opacity-0'
           }`}
         >
           <nav className="flex flex-col space-y-2 pb-4">
             {menuItems.map((item, index) => (
               <Link
                 key={item.path}
-                to={item.path}
+                to={`/${lang}${item.path ? '/' + item.path : ''}`}
                 onClick={handleMenuClose}
                 className="px-4 py-3 text-left text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200 transform hover:translate-x-2"
                 style={{
@@ -104,6 +117,11 @@ const Header = ({ scrolled }) => {
                 {item.label}
               </Link>
             ))}
+
+            {/* Language Switcher for Mobile */}
+            <div className="px-4 py-3">
+              <LanguageSwitcher />
+            </div>
           </nav>
         </div>
       </div>

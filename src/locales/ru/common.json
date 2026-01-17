@@ -1,0 +1,33 @@
+{
+  "header": {
+    "logo": {
+      "title": "Green & Digital Office",
+      "subtitle": "КГТУ им. И. Раззакова"
+    },
+    "nav": {
+      "home": "Главная",
+      "about": "О проекте",
+      "mission": "Миссия",
+      "structure": "Структура",
+      "projects": "Проекты",
+      "news": "Новости",
+      "events": "Мероприятия",
+      "partners": "Партнёры",
+      "contact": "Контакты"
+    }
+  },
+  "footer": {
+    "title": "Green & Digital Office",
+    "description": "Университетская площадка для продвижения принципов устойчивого развития и цифровой трансформации КГТУ им. И. Раззакова.",
+    "quickLinks": "Быстрые ссылки",
+    "contactInfo": "Контактная информация",
+    "address": {
+      "city": "г. Бишкек, пр-т Ч. Айтматова, 66",
+      "building": "Главный корпус КГТУ, 1/234"
+    },
+    "madeWith": "Сделано с",
+    "forSustainable": "для устойчивого будущего",
+    "copyright": "Green and Digital Office, КГТУ им. И. Раззакова",
+    "project": "Erasmus+ GREENKG Project"
+  }
+}

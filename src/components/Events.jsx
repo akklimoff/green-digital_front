@@ -1,30 +1,37 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
+import { useParams } from 'react-router-dom'
 import { FaCalendarCheck, FaChalkboardTeacher, FaComments, FaUsers, FaLightbulb } from 'react-icons/fa'
 
 const Events = () => {
+  const { t } = useTranslation('events')
+  const { lang } = useParams()
+
+  const eventTypesData = t('eventTypes', { returnObjects: true })
+
   const eventTypes = [
     {
       icon: FaChalkboardTeacher,
-      title: 'Обучающие семинары и тренинги',
-      description: 'Практические занятия по экологическому менеджменту и цифровым технологиям',
+      title: eventTypesData[0].title,
+      description: eventTypesData[0].description,
       color: 'blue'
     },
     {
       icon: FaUsers,
-      title: 'Лекции международных экспертов',
-      description: 'Встречи с ведущими специалистами в области устойчивого развития',
+      title: eventTypesData[1].title,
+      description: eventTypesData[1].description,
       color: 'purple'
     },
     {
       icon: FaComments,
-      title: 'Круглые столы и дискуссии',
-      description: 'Обсуждение актуальных вопросов экологии и цифровизации образования',
+      title: eventTypesData[2].title,
+      description: eventTypesData[2].description,
       color: 'green'
     },
     {
       icon: FaLightbulb,
-      title: 'Студенческие инициативы',
-      description: 'Поддержка проектов и идей студентов по устойчивому развитию',
+      title: eventTypesData[3].title,
+      description: eventTypesData[3].description,
       color: 'yellow'
     }
   ]
@@ -47,11 +54,11 @@ const Events = () => {
           <div className="text-center mb-16">
             <div className="flex items-center justify-center mb-4">
               <FaCalendarCheck className="text-5xl text-primary-600 mr-4" />
-              <h2 className="text-4xl md:text-5xl font-bold text-primary-700">Мероприятия и услуги</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-primary-700">{t('title')}</h2>
             </div>
             <div className="w-24 h-1 bg-green-500 mx-auto mb-6"></div>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Green and Digital Office регулярно организует и поддерживает различные образовательные и научные мероприятия
+              {t('description')}
             </p>
           </div>
 
@@ -79,10 +86,9 @@ const Events = () => {
           {/* Calendar Notice */}
           <div className="bg-gradient-to-br from-primary-600 to-primary-800 rounded-2xl p-8 md:p-12 text-white text-center">
             <FaCalendarCheck className="text-5xl mx-auto mb-4 animate-pulse" />
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">Календарь мероприятий</h3>
+            <h3 className="text-2xl md:text-3xl font-bold mb-4">{t('calendar.title')}</h3>
             <p className="text-lg text-primary-100 leading-relaxed">
-              Календарь мероприятий обновляется на постоянной основе. Следите за актуальной информацией о предстоящих
-              семинарах, тренингах и встречах.
+              {t('calendar.description')}
             </p>
           </div>
         </div>

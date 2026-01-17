@@ -1,0 +1,14 @@
+{
+  "hero": {
+    "title": "Green and Digital Office",
+    "university": "Kyrgyz State Technical University",
+    "universityShort": "named after I. Razzakov",
+    "description": "University platform for promoting principles of sustainable development, environmental responsibility, and digital transformation in educational and administrative activities.",
+    "project": "The Office was opened in 2024 as part of the international Erasmus+ project",
+    "projectName": "«Green and Digital Universities for Sustainable Development of Kyrgyzstan (GREENKG)»",
+    "buttons": {
+      "learnMore": "Learn More",
+      "contact": "Contact Us"
+    }
+  }
+}

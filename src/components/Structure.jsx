@@ -1,14 +1,21 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
+import { useParams } from 'react-router-dom'
 import { FaUserTie, FaUsers, FaLaptop, FaLeaf, FaBuilding, FaHandsHelping } from 'react-icons/fa'
 import ScrollAnimation from './ScrollAnimation'
 
 const Structure = () => {
+  const { t } = useTranslation('structure')
+  const { lang } = useParams()
+
+  const structureTitles = t('structure', { returnObjects: true })
+
   const structureItems = [
-    { icon: FaUserTie, title: 'Руководитель офиса', color: 'primary' },
-    { icon: FaLeaf, title: 'Рабочая группа по экологическим инициативам', color: 'green' },
-    { icon: FaLaptop, title: 'Рабочая группа по цифровым решениям', color: 'blue' },
-    { icon: FaBuilding, title: 'Представители институтов', color: 'indigo' },
-    { icon: FaHandsHelping, title: 'Студенческие волонтёры и активисты', color: 'purple' }
+    { icon: FaUserTie, title: structureTitles[0], color: 'primary' },
+    { icon: FaLeaf, title: structureTitles[1], color: 'green' },
+    { icon: FaLaptop, title: structureTitles[2], color: 'blue' },
+    { icon: FaBuilding, title: structureTitles[3], color: 'indigo' },
+    { icon: FaHandsHelping, title: structureTitles[4], color: 'purple' }
   ]
 
   const getColorClasses = (color) => {
@@ -30,12 +37,11 @@ const Structure = () => {
           <ScrollAnimation animation="fade-up">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-primary-700 mb-4">
-                Структура Green and Digital Office
+                {t('title')}
               </h2>
               <div className="w-24 h-1 bg-green-500 mx-auto mb-8"></div>
               <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-                Green and Digital Office функционирует как междисциплинарное структурное подразделение Кыргызского
-                государственного технического университета им. И. Раззакова
+                {t('description')}
               </p>
             </div>
           </ScrollAnimation>
@@ -47,12 +53,10 @@ const Structure = () => {
                 <FaUsers className="text-4xl text-primary-600 flex-shrink-0 mt-1" />
                 <div className="space-y-4">
                   <p className="text-gray-700 leading-relaxed">
-                    Офис осуществляет свою деятельность в структуре, курируемой проректором по научной работе.
+                    {t('overview.paragraph1')}
                   </p>
                   <p className="text-gray-700 leading-relaxed">
-                    Офис взаимодействует со структурными подразделениями университета, институтами, кафедрами и научными
-                    центрами КГТУ, обеспечивая координацию, методическую поддержку и сопровождение инициатив в области
-                    устойчивого развития, экологического менеджмента и цифровизации.
+                    {t('overview.paragraph2')}
                   </p>
                 </div>
               </div>
@@ -84,10 +88,9 @@ const Structure = () => {
           {/* Cooperation */}
           <ScrollAnimation animation="fade-up" delay={300}>
             <div className="bg-primary-700 rounded-2xl p-8 md:p-12 text-white text-center">
-              <h3 className="text-2xl md:text-3xl font-bold mb-4">Сотрудничество</h3>
+              <h3 className="text-2xl md:text-3xl font-bold mb-4">{t('cooperation.title')}</h3>
               <p className="text-lg text-primary-100 leading-relaxed">
-                Офис осуществляет деятельность в тесном сотрудничестве с администрацией университета и международными
-                партнёрами
+                {t('cooperation.description')}
               </p>
             </div>
           </ScrollAnimation>

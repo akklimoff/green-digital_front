@@ -1,0 +1,25 @@
+{
+  "title": "News",
+  "description": "Current information about events, achievements, and KSTU participation in international projects",
+  "newsItems": [
+    {
+      "title": "Green and Digital Office Events",
+      "date": "2024",
+      "description": "Regular meetings, seminars, and training on sustainable development issues"
+    },
+    {
+      "title": "Participation in International Projects",
+      "date": "2024",
+      "description": "KSTU actively participates in Erasmus+ GREENKG forums and conferences"
+    },
+    {
+      "title": "Student Achievements",
+      "date": "2024",
+      "description": "Awards and recognition of student initiatives in the field of sustainable development"
+    }
+  ],
+  "infoBox": {
+    "highlight": "In the «News» section",
+    "text": "current information about events, training, seminars, conferences, and achievements of students and faculty in the field of sustainable development is published."
+  }
+}

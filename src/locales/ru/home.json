@@ -1,0 +1,14 @@
+{
+  "hero": {
+    "title": "Green and Digital Office",
+    "university": "Кыргызский государственный технический университет",
+    "universityShort": "им. И. Раззакова",
+    "description": "Университетская площадка для продвижения принципов устойчивого развития, экологической ответственности и цифровой трансформации в образовательной и управленческой деятельности университета.",
+    "project": "Офис открыт в 2024 году в рамках международного проекта Erasmus+",
+    "projectName": "«Green and Digital Universities for Sustainable Development of Kyrgyzstan (GREENKG)»",
+    "buttons": {
+      "learnMore": "Узнать больше",
+      "contact": "Связаться с нами"
+    }
+  }
+}
